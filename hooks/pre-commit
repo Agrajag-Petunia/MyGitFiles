@@ -1,0 +1,18 @@
+#!/bin/sh
+
+name=`git config --local user.name`
+email=`git config --local user.email`
+
+if ["$name" = ''] 
+then
+    echo "You need to set your username for this project"
+    echo "'git config --local user.name \"Your Name\"'"
+    exit 1
+fi
+
+if ["$email" = ''] 
+then
+    echo "You need to set your email for this project"
+    echo "'git config --local user.email \"you@email.ca\"'"
+    exit 1
+fi
